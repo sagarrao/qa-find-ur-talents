@@ -1,0 +1,33 @@
+extends layout
+block content
+    div.container(ng-app='geniuses', ng-controller='RegisterController')
+        div.page-header(style={color: 'blue'})
+           h3 Welcome to SignUp Page
+        form.register-form.form-horizontal(role='form', name='form.registerForm', ng-submit='registerUser()')
+            div.form-group(style={color: 'red'})
+                .col-sm-8
+                    | {{ errorMsg }}
+            div.form-group
+            .row
+                label.col-sm-2 Email
+                div.col-sm-4
+                    input.form-control(type='email',placeholder='Email',required=true, name='email',ng-model='email',value=email)
+            div.form-group
+            .row
+            div.form-group
+            .row
+                label.col-sm-2 Password
+                div.col-sm-4
+                    input.form-control(placeholder='Password',required=true, name='password',ng-model='password',type='password',value='password')
+            div.form-group
+            .row
+            div.form-group
+                div.col-sm-offset-2.col-sm-8
+                    button.login.btn.btn-primary(type='submit') Sign Up
+                div.col-sm-2
+        if auth
+            a(href="/?auth=#{auth}") Return to home page
+        else
+            a(href="/") Return to home page
+block append scripts
+    script(src='js/RegisterController.js')

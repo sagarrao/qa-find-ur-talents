@@ -1,0 +1,23 @@
+extends layout
+block content
+    div.container(ng-app='geniuses' , ng-controller='HomeController') 
+      div.jumbotron
+        h1 Hello!
+        if authenticated
+          div(ng-init="uid = #{uid}")
+          p(style={color: 'green'}) #{message} 
+          p 
+            a.small(href="addGenius", ng-hide='authorization_failed') Add a New Genius
+          p
+            a.small(href="/geniuses#?auth="+authToken) View All Geniuses
+          a.btn.btn-primary(href="/logout") Logout
+        else
+          p(style={color: 'blue'}) #{message}
+          p
+            a.btn.btn-primary(href="/login") Login now
+          p
+            span.small Don't have an account?
+            span &nbsp;
+            a.small(href="/register") Register now
+block append scripts
+    script(src='js/HomeController.js')
