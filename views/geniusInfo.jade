@@ -19,6 +19,10 @@ block content
                 a( ng-click="updateGenius()" ) UPDATE GENIUS
             div.form-group
             .row
+              div.col-sm-3 
+               input.form-control(type='file', name='browsefile'  id ='browsefileid', ng-Show='add', on-read-file="showContent($fileContent)")           
+            div.form-group
+            .row
               label.h4.col-sm-12(style='text-align: center;',class="text-primary") PERSONAL INFORMATION
             div.form-group
             .row
@@ -141,6 +145,24 @@ block content
                     input.form-control(type='text', name='geniustfrc', ng-model='user.geniustfrc',  ng-trim='false',id ='geniustfrc')              
                   div.col-sm-4			  
                     input.form-control(type='text', name='geniuselementinholland', ng-model='user.geniuselementinholland',  ng-trim='false',id ='geniuselementinholland')
+                div.form-group
+                .row
+                  label.col-sm-2 COGNITIVE
+                  label.col-sm-2 AFFECTIVE
+                  label.col-sm-2 CRITICAL
+                  label.col-sm-2 REFLECTIVE
+                  label.col-sm-4 INTEGRATED
+                .row              
+                  div.col-sm-2			  
+                    input.form-control(type='text', name='geniuscognitivestyle', ng-model='user.geniuscognitivestyle',  ng-trim='false',id ='geniuscognitivestyle')                            
+                  div.col-sm-2			  
+                    input.form-control(type='text', name='geniusaffectivestyle', ng-model='user.geniusaffectivestyle',  ng-trim='false',id ='geniusaffectivestyle')              
+                  div.col-sm-2			  
+                    input.form-control(type='text', name='geniuscriticalstyle', ng-model='user.geniuscriticalstyle',  ng-trim='false',id ='geniuscriticalstyle')              
+                  div.col-sm-2			  
+                    input.form-control(type='text', name='geniusreflectivestyle', ng-model='user.geniusreflectivestyle',  ng-trim='false',id ='geniusreflectivestyle')              
+                  div.col-sm-4			  
+                    input.form-control(type='text', name='geniuseintegratedstyle', ng-model='user.geniuseintegratedstyle',  ng-trim='false',id ='geniuseintegratedstyle')
                 div.form-group
                 .row
                   label.h4.col-sm-12(style='text-align: center;',class="text-primary") SKILL             
@@ -345,6 +367,7 @@ block content
                 button.login.btn.btn-primary(type='submit', ng-disabled='form_readonly') Save  
             div.pull-right
 block append scripts
+    script(src='js/onReadFileDirective.js')
     script(src='js/GeniusFactory.js')
     script(src='js/currentAuthFactory.js')
     script(src='js/GetOrUpdateGeniusController.js')
