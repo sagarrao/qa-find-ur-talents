@@ -41,7 +41,7 @@ block content
             div.form-group
             .row
               div.col-sm-2
-               a(ng-click='enablelist()') Click to return to the list
+               a(ng-click='enablelist()') Click to return to the Genius's list
             div.form-group
             .row
               label.h4.col-sm-12(style='text-align: center;',class="text-primary") PERSONAL INFORMATION
@@ -114,9 +114,6 @@ block content
               div.col-sm-5
                 input.form-control(type='text', name='geniusdoc', ng-model='user.geniusdoc',  ng-trim='false',id ='geniusdoc',data-provide="datepicker-inline",  ng-Show='user.geniusconverted')
             div(ng-show='user.scantakenyes')
-                div.form-group
-                .row
-                  a( ng-click = 'enablelist()' ) click to return to the genius list
                 div.form-group
                 .row
                   label.h4.col-sm-12(style='text-align: center;',class="text-primary") GENIUS' BRAIN DETAILS
@@ -374,4 +371,4 @@ block append scripts
     script(src='js/offsetFilter.js')
     script(src='js/currentAuthFactory.js')
     script(src='js/GeniusFactory.js')
-    script(src='js/GetAllGeniusesController.js')
+    script(src='js/GetAllgeniusesController.js')

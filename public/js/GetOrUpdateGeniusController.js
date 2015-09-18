@@ -100,8 +100,8 @@ app.controller('GetOrUpdateGenius',["$scope", "GeniusFactory","$window","$locati
 									user.geniusgender= 'male';
 								}
 								user.geniusparent = content[79].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ");
-								user.geniusaddressline1 = content[80].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",");
-								user.geniusaddressline2 = content[81].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",");
+								user.geniusaddressline1 = content[80].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") + content[81].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",");
+								user.geniusaddressline2 = content[106].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",");
 								user.geniuscontact = content[82].R[0].T;
 								
 								//Fetching Genius's Lobe details
@@ -180,13 +180,11 @@ app.controller('GetOrUpdateGenius',["$scope", "GeniusFactory","$window","$locati
 														if(document.getElementById('geniusaddremarks').value) 				   
 														{  var date =  new Date();
 														   date = date.toString().substring(0,24);
-														   remarks = date  +  " " + document.getElementById('geniusaddremarks').value ;
+														   remarks = date  +  '\n' + document.getElementById('geniusaddremarks').value + '\n';
 														  
 														   if(document.getElementById('geniuspreviousremarks').value){
 															   
-														   user.geniuspreviousremarks = remarks + 
-																						"" + 
-																						document.getElementById('geniuspreviousremarks').value;
+														   user.geniuspreviousremarks = remarks + '\n' + document.getElementById('geniuspreviousremarks').value;
 														   }
 														   else{
 															   user.geniuspreviousremarks = remarks ;
