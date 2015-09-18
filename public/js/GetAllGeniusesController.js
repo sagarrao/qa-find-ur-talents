@@ -92,13 +92,12 @@ app.controller('GetAllGeniuses', ["currentAuth","$scope", 'GeniusFactory', '$win
 											if(document.getElementById('geniusaddremarks').value) 				   
 											{  var date =  new Date();
 											   date = date.toString().substring(0,24);
-											   remarks = date  +  " " + document.getElementById('geniusaddremarks').value ;
+											   remarks = date  +  '\n' + document.getElementById('geniusaddremarks').value +  '\n';
+															
 											   
 											   if(document.getElementById('geniuspreviousremarks').value) 
 											   {
-												   user.geniuspreviousremarks = remarks + 
-																			"" + 
-																			document.getElementById('geniuspreviousremarks').value;
+												   user.geniuspreviousremarks = remarks + '\n' + document.getElementById('geniuspreviousremarks').value;
 											   }											   
 											   else
 											   {
