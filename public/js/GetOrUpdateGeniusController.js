@@ -89,8 +89,8 @@ app.controller('GetOrUpdateGenius',["$scope", "GeniusFactory","$window","$locati
 								//Fetching Genius's Characterstic and Thinking Type
 								user.geniuscharinner = content[72].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") ;
 								user.geniusthinkleft = content[73].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") ;
-								user.geniuscharouter = content[75].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") ;
-								user.geniusthinkright = content[74].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") ;
+								user.geniusthinkright = content[75].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") ;
+								user.geniuscharouter = content[74].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") ;
 								
 								//Fetching Genius's Personal Details
 								user.geniusname = content[76].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") ;
@@ -118,23 +118,18 @@ app.controller('GetOrUpdateGenius',["$scope", "GeniusFactory","$window","$locati
 										user.geniusprefrontal = content[87].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") + " %" ;
 										
 										//Fetching Genius's Brain details
-										user.geniusleftpercentage = content[88].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6);
-										user.geniusrightpercentage = content[89].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6);
-										user.geniustfrc = content[90].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6);
-										user.geniusreflective = content[91].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6);
-										user.geniusmotive = content[92].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6);
-										user.geniusmotive = content[92].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6);
-										user.geniusmotive = content[92].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6);
-										user.geniusmotive = content[92].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6);
-										user.geniusmotive = content[92].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6);
-										user.geniusmotive = content[92].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6);
+										user.geniusleftpercentage = content[88].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g,"%");
+										user.geniusrightpercentage = content[89].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g,"%");
+										user.geniustfrc = content[90].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g,"%");
+										user.geniusreflective = content[91].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g,"%");
+										user.geniusmotive = content[92].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g,"%");
 										
 										//Fetching Genius's STYLE of learning
-										user.geniuscognitivestyle = content[93].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6);
-										user.geniusaffectivestyle = content[94].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6);
-										user.geniuscriticalstyle = content[95].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6);
-										user.geniusreflectivestyle = content[96].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6);
-										user.geniuseintegratedstyle =  content[97].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6);
+										user.geniuscognitivestyle = content[93].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g,"%");
+										user.geniusaffectivestyle = content[94].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g,"%");
+										user.geniuscriticalstyle = content[95].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g,"%");
+										user.geniusreflectivestyle = content[96].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g,"%");
+										user.geniuseintegratedstyle =  content[97].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g,"%");
 										
 										//Fetching Genius's STYLE of learning
 										user.geniusenterprise =  content[98].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",");
@@ -161,18 +156,18 @@ app.controller('GetOrUpdateGenius',["$scope", "GeniusFactory","$window","$locati
 										user.geniusprefrontal = content[86].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") + " %" ;
 										
 										//Fetching Genius's Brain details
-										user.geniusleftpercentage = content[87].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6);
-										user.geniusrightpercentage = content[88].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6);
-										user.geniustfrc = content[89].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6);
-										user.geniusreflective = content[90].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6);
-										user.geniusmotive = content[91].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6);
+										user.geniusleftpercentage = content[87].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g,"%");
+										user.geniusrightpercentage = content[88].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g,"%");
+										user.geniustfrc = content[89].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g,"%");
+										user.geniusreflective = content[90].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g,"%");
+										user.geniusmotive = content[91].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g,"%");
 										
 										//Fetching Genius's STYLE of learning
-										user.geniuscognitivestyle = content[92].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6);
-										user.geniusaffectivestyle = content[93].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6);
-										user.geniuscriticalstyle = content[94].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6);
-										user.geniusreflectivestyle = content[95].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6);
-										user.geniuseintegratedstyle =  content[96].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6);
+										user.geniuscognitivestyle = content[92].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g,"%");
+										user.geniusaffectivestyle = content[93].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g,"%");
+										user.geniuscriticalstyle = content[94].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g,"%");
+										user.geniusreflectivestyle = content[95].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g,"%");
+										user.geniuseintegratedstyle =  content[96].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g,"%");
 										
 										//Fetching Genius's STYLE of learning
 										user.geniusenterprise =  content[97].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",");
@@ -196,7 +191,7 @@ app.controller('GetOrUpdateGenius',["$scope", "GeniusFactory","$window","$locati
 								user.geniusemail =  content[length -8].R[0].T.replace(/%40/g, "@").replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",");
 								user.geniusdos = content[length - 7].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",");
 								user.geniusid = content[length-5].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",");
-								//console.log(user);
+								//console.log(JSON.stringify(user));
 								
 								
 							 };
