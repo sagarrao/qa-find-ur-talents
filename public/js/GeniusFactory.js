@@ -11,7 +11,7 @@
 			  usersArray: usersArray,
 			  setUser : function setUser(id){ //Sets current user and user id for future use
 				         
-						_user = $firebaseObject(new Firebase(ref+"/"+id));
+						_user = $firebaseObject(new Firebase(geniusesCollectionURL+"/"+id));
 						_userid = id;
 						},
 			 getUser : function getUser(){ //Returns current user as object
@@ -33,7 +33,7 @@
 													});
 						},	    
 			 addUser: function addUser(user){
-						_users = $firebaseArray(new Firebase(ref));
+						_users = $firebaseArray(new Firebase(geniusesCollectionURL));
 						_users.$add(user).then( function(ref){  //If User was added successfully then redirects to the home page
 												_user = null;
 												document.forms['geniusInfoForm'].reset();

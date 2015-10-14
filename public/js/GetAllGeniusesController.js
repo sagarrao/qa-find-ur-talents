@@ -31,7 +31,7 @@ app.controller('GetAllGeniuses', ["currentAuth","$scope", 'GeniusFactory', '$win
 		//Checks If current User is Authorized to view the page, and fetches the user list if yes.
 		if(currentAuth)
 		{
-			$scope.users = $firebaseArray(new Firebase(ref)); 
+			$scope.users = $firebaseArray(new Firebase(geniusesCollectionURL)); 
 		}
 		// Initializes the scope variables			
 		$scope.selected="";
@@ -46,8 +46,10 @@ app.controller('GetAllGeniuses', ["currentAuth","$scope", 'GeniusFactory', '$win
 						   uid = $scope.uid; 
 						   // If UID found in the session , Check if the user associated with this UID has write access to the database
 						   if(uid != null){
-							   var ref = new Firebase("https://torrid-heat-237.firebaseio.com/superusers");
-							   ref.once("value", function(snapshot) { 
+
+							   var adminURL = new Firebase(administratorsURL);
+							   
+							   adminURL.once("value", function(snapshot) { 
 													var authorization = snapshot.hasChild(uid);
 													// If authorization check succeeds then set the authorization_failed as false
 													if ( authorization == true ){
