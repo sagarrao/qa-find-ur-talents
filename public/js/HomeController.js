@@ -8,8 +8,8 @@ app.controller('HomeController',["$scope", "$window","$location","$firebaseArray
 							 // If UID is found, check if user has write access on the Firebase database
 							 if(uid != null)
 							 {
-								 var ref = new Firebase("https://torrid-heat-237.firebaseio.com/superusers");
-								 ref.once("value", function(snapshot) {  var authorization = snapshot.hasChild(uid);
+								 var adminURL =  new Firebase(administratorsURL);
+								 adminURL.once("value", function(snapshot) {  var authorization = snapshot.hasChild(uid);
 																		 if ( authorization == true ) {
 																			 $scope.authorization_failed = false;
 																		 }																			 

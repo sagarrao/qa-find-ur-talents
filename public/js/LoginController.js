@@ -2,9 +2,8 @@ app.controller('LoginController', ["$scope", "$firebaseAuth","$location","$windo
 	function($scope, $firebaseAuth, $location,$window) {
 		// Initializes the scope variables
 		$scope.welcomemessage="Please Provide Your Login Credentials";
-		var firebaseRef = "https://torrid-heat-237.firebaseio.com";
-		var aref = new Firebase(firebaseRef);
-		var auth = $firebaseAuth(aref);
+		var authURL = new Firebase(authenticationURL);
+		var auth = $firebaseAuth(authURL);
 		var authFailed = false;
 		$scope.email ='';
 		$scope.password='';

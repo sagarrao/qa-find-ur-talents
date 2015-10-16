@@ -7,12 +7,10 @@ function($scope, $firebaseAuth, $location,$window) {
     $scope.email ='';
     $scope.password = '';
 	document.forms['form.registerForm'].reset();
-	var aref = new Firebase(ref);
-	//console.log($scope.email ,$scope.password);
-	//$scope.$apply();
+	var collection_URL = new Firebase(geniusesCollectionURL);
 	
 	$scope.registerUser = function(){ // try to create a user in Firebase
-		aref.createUser({
+		collection_URL.createUser({
 		email: $scope.email,
 		password: $scope.password},
 		function(error, userData) { //reset scope variables , scope data and display error if creating user is unsuccessful
@@ -36,19 +34,14 @@ function($scope, $firebaseAuth, $location,$window) {
 						}
 		   else {
 					
-					var auth = $firebaseAuth(aref);
+					var auth = $firebaseAuth(collection_URL);
 					// Try to login the User if user creation was successful.
 					auth.$authWithPassword({ email:$scope.email,
 											 password: $scope.password 
 										   }).then(function(authData) { 
-										                                // Reset Scope variables
-																		//$scope.email='';
-																		//$scope.password='';
-																		//$scope.errorMsg='';
-																		//document.forms['form.registerForm'].reset();
 																		// If login is successful, Redirect the user to home 
 																		window.location.assign('/?auth='+JSON.stringify(authData));
-																		//authFailed = false;
+																		
 																	  }).catch(function(error){ $scope.email='';
 																								$scope.password='';
 																								//Redirect to login page for re-login, if login fails.

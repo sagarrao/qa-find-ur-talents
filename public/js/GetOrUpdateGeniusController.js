@@ -9,7 +9,7 @@ app.controller('GetOrUpdateGenius',["$scope", "GeniusFactory","$window","$locati
 		$scope.form_readonly = false;
 		$scope.selected = '';
 		if (currentAuth) { // Fetches the existing list of genius's from firebase if current user has authorization for the same.
-			$scope.usersArray = $firebaseArray(new Firebase(ref));			
+			$scope.usersArray = $firebaseArray(new Firebase(geniusesCollectionURL));			
 		}
 	 	var userId = null;
 		$scope.error_messsage = null;
