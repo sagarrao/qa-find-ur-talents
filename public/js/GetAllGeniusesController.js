@@ -1,5 +1,12 @@
 app.controller('GetAllGeniuses', ["currentAuth","$scope", 'GeniusFactory', '$window','$location','$firebaseArray',
     function(currentAuth,$scope, GeniusFactory,$window,$location,$firebaseArray) {
+		
+		//Checks If current User is Authorized to view the page, and fetches the user list if yes.
+		if(currentAuth)
+		{
+			$scope.users = $firebaseArray(new Firebase(geniusesCollectionURL)); 
+		}
+		
 		// Code for creating a pagination in the window
 		$scope.itemsPerPage = 10;
 		$scope.currentPage = 0;
@@ -28,11 +35,7 @@ app.controller('GetAllGeniuses', ["currentAuth","$scope", 'GeniusFactory', '$win
 		  $scope.nextPageDisabled = function() { return $scope.currentPage === $scope.pageCount() ? "disabled" : ""; };	 
   
   
-		//Checks If current User is Authorized to view the page, and fetches the user list if yes.
-		if(currentAuth)
-		{
-			$scope.users = $firebaseArray(new Firebase(geniusesCollectionURL)); 
-		}
+		
 		// Initializes the scope variables			
 		$scope.selected="";
 		$scope.message="Pick Any Genius From Below List " ;

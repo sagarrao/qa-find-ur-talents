@@ -1,6 +1,7 @@
 extends layout
 block content
     div.container(ng-app='geniuses',ng-controller='LoginController')
+      div.jumbotron
         div.page-header(style={color: 'blue'})
             h3  {{ welcomemessage }}
         form.login-form.form-horizontal(role='form',name="form.loginForm")

@@ -12,6 +12,7 @@ block content
             a.small(href="/geniuses#?auth="+authToken) View All Geniuses
           a.btn.btn-primary(href="/logout") Logout
         else
+          div
           p(style={color: 'blue'}) #{message}
           p
             a.btn.btn-primary(href="/login") Login now

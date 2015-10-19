@@ -1,6 +1,7 @@
 extends layout
 block content
     div.container(ng-app='geniuses', ng-controller='RegisterController')
+      div.jumbotron
         div.page-header(style={color: 'blue'})
            h3 Welcome to SignUp Page
         form.register-form.form-horizontal(role='form', name='form.registerForm', ng-submit='registerUser()')

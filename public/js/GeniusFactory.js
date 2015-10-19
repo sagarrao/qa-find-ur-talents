@@ -53,7 +53,7 @@
 	
     function users() {
 		  if (!_users) {
-			_users = $firebaseObject(new Firebase(ref));
+			_users = $firebaseObject(new Firebase(geniusesCollectionURL));
 		  }
       return _users;
     }

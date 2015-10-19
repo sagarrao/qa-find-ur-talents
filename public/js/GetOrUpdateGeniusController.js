@@ -29,25 +29,35 @@ app.controller('GetOrUpdateGenius',["$scope", "GeniusFactory","$window","$locati
 								else
 								{
 										
-									user.geniusmanagementpattern = content[0].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") +  " " + content[1].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",")+ '%';
+									user.geniusmanagementpattern = content[0].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") ;
+									user.geniusmanagementpercentage = content[1].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",");
 									user.geniusmanagementrank = content[3].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") ;
-									user.geniusleadershippattern = content[4].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") +  " " + content[5].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") + '%';
+									user.geniusleadershippattern = content[4].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") ;
+									user.geniusleadershippercentage =  content[5].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") ;
 									user.geniusleadershiprank = content[7].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") ;
 									user.geniusimaginerank = content[8].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") ;
-									user.geniusimaginepattern =  content[11].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") +  " " + content[9].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") + '%';
+									user.geniusimaginepattern =  content[11].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") ;
+									user.geniusimaginepercentage = content[9].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") ;
 									user.geniusmathlogicrank = content[12].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") ;
-									user.geniusmathlogicpattern =  content[15].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") +  " " + content[13].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") + '%';
-									user.geniusfinemotorpattern = content[16].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") +  " " + content[17].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",")+ '%';
+									user.geniusmathlogicpattern =  content[15].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") ;
+									user.geniusmathlogicpercentage = content[13].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") ;
+									user.geniusfinemotorpattern = content[16].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") ;
+									user.geniusfinemotorpercentage =content[17].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",");
 									user.geniusfinemotorrank = content[19].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") ;
-									user.geniusgrossmotorpattern = content[20].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") +  " " + content[21].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",")+ '%';
+									user.geniusgrossmotorpattern = content[20].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") ;
+									user.geniusgrossmotorpercentage =content[21].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",");
 									user.geniusgrossmotorrank = content[23].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") ;
 									user.geniusmusicrank = content[24].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") ;
-									user.geniusmusicpattern = content[27].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") +  " " + content[25].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",")+ '%';
+									user.geniusmusicpattern = content[27].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") ;
+									user.geniusmusicpercentage = content[25].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",");
 									user.geniuslanguagelistenrank = content[28].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") ;
-									user.geniuslanguagelistenpattern = content[31].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") +  " " + content[29].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",")+ '%';
-									user.geniusobservationpattern = content[32].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") +  " " + content[33].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",")+ '%';
+									user.geniuslanguagelistenpattern = content[31].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") ;
+									user.geniuslanguagelistenpercentage = content[29].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",");
+									user.geniusobservationpattern = content[32].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") ;
+									user.geniusobservationpercentage =content[33].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",");
 									user.geniusobservationrank = content[35].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") ;
-									user.geniusvisualpattern = content[36].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") +  " " + content[37].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",")+ '%';
+									user.geniusvisualpattern = content[36].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",");
+									user.geniusvisualpercentage =content[37].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",");
 									user.geniusvisualrank = content[39].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") ;
 									
 									//Fetching Genius's Quotient 
@@ -129,25 +139,25 @@ app.controller('GetOrUpdateGenius',["$scope", "GeniusFactory","$window","$locati
 											user.geniuscontact = content[81+length].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",");
 											
 											//Fetching Genius's Lobe details
-											user.geniusocipital = content[82+length].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") + " %" ;
-											user.geniustemporal = content[83+length].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") + " %" ;
-											user.geniusparietal = content[84+length].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") + " %" ;
-											user.geniusfrontal = content[85+length].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") + " %" ;
-											user.geniusprefrontal = content[86+length].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") + " %" ;
+											user.geniusocipital = content[82+length].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",") ;
+											user.geniustemporal = content[83+length].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",")  ;
+											user.geniusparietal = content[84+length].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",")  ;
+											user.geniusfrontal = content[85+length].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",")  ;
+											user.geniusprefrontal = content[86+length].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",")  ;
 											
 											//Fetching Genius's Brain details
-											user.geniusleftpercentage = content[87+length].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g,"%");
-											user.geniusrightpercentage = content[88+length].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g,"%");
-											user.geniustfrc = content[89+length].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g,"%");
-											user.geniusreflective = content[90+length].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g,"%");
-											user.geniusmotive = content[91+length].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g,"%");
+											user.geniusleftpercentage = content[87+length].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g," ");
+											user.geniusrightpercentage = content[88+length].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g," ");
+											user.geniustfrc = content[89+length].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g," ");
+											user.geniusreflective = content[90+length].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g," ");
+											user.geniusmotive = content[91+length].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g," ");
 											
 											//Fetching Genius's STYLE of learning
-											user.geniuscognitivestyle = content[92+length].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g,"%");
-											user.geniusaffectivestyle = content[93+length].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g,"%");
+											user.geniuscognitivestyle = content[92+length].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g," ");
+											user.geniusaffectivestyle = content[93+length].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g," ");
 											user.geniuscriticalstyle = content[94+length].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g,"%");
-											user.geniusreflectivestyle = content[95+length].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g,"%");
-											user.geniuseintegratedstyle =  content[96+length].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g,"%");
+											user.geniusreflectivestyle = content[95+length].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g," ");
+											user.geniuseintegratedstyle =  content[96+length].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",").substring(0, 6).replace(/%2/g," ");
 											
 											//Fetching Genius's STYLE of learning
 											user.geniusenterprise =  content[97+length].R[0].T.replace(/%2F/g, "/").replace(/%20/g ," ").replace(/%2C/g ,",");
