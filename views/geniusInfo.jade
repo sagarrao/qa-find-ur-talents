@@ -1,15 +1,17 @@
 extends layout
 block content
     div.container(ng-app='geniuses', ng-controller='GetOrUpdateGenius', ng-disabled='form_readonly')
+      div.jumbotron
         div.page-header
         img(src="http://mrmalbon.com/wp-content/uploads/2013/11/12496301-abstract-cognitive-intelligence.jpg", class="img-responsive", width="150", height="150")
         strong.h2.page-header(class="well well-sm") Genius Info!
         form.genius-info-form.form-horizontal(role='form',name='geniusInfoForm', ng-submit="saveGeniusInfo()", ng-model='geniusInfoForm')
             div.form-group
-            .row
-              a( href="/logout" ) LogOut?
-              div.col-sm-2
+            div.row
+              div.col-xs-2.text-left
                a(href="/",ng-show='true') Home
+              div.col-xs-2.text-left
+              a( href="/logout" ) LogOut?
             div.form-group
             .row
               ul.nav.nav-tabs
@@ -26,14 +28,14 @@ block content
               label.h4.col-sm-12(style='text-align: center;',class="text-primary") PERSONAL INFORMATION
             div.form-group
             .row
-              div.col-sm-1 
+              div.col-xs-2 
                input.form-control(type='checkbox', name='geniusscantakenyes', ng-model='user.scantakenyes',  id ='geniusscantakenyes', ng-hide='form_readonly')
-              div.col-sm-2(ng-hide='form_readonly')
-               h4 Scan Taken? 
-              div.col-sm-1 
+              div.col-xs-4(ng-hide='form_readonly')
+               .h4 Scan Taken? 
+              div.col-xs-2 
                input.form-control(type='checkbox', name='geniusconverted', ng-model='user.geniusconverted',  id ='geniusconverted', ng-hide='form_readonly')
-              div.col-sm-2(ng-hide='form_readonly')
-               h4 Converted Genius?
+              div.col-xs-4(ng-hide='form_readonly')
+               .h4 Converted Genius?
             div.form-group
             .row 
               label.col-sm-1(ng-Show='user.scantakenyes') GENIUS ID
@@ -96,139 +98,150 @@ block content
             div(ng-show='user.scantakenyes')
                 div.form-group
                 .row
-                  label.h4.col-sm-12(style='text-align: center;',class="text-primary") GENIUS' BRAIN DETAILS
+                  label.h4.col-xs-12(style='text-align: center;',class="text-primary") GENIUS' BRAIN DETAILS
                 div.form-group
                 .row
-                  label.col-sm-2 LOBES
-                  label.col-sm-2 PREFRONTAL
-                  label.col-sm-2 FRONTAL
-                  label.col-sm-2 PARIETAL
-                  label.col-sm-2 TEMPORAL
-                  label.col-sm-2 OCIPITAL
-                div.form-group
-                .row              
-                  label.col-sm-2 PERCENTAGE              
-                  div.col-sm-2			  
-                    input.form-control(type='text', name='geniusprefrontal', ng-model='user.geniusprefrontal',  ng-trim='false',id ='geniusprefrontal')              
-                  div.col-sm-2			  
-                    input.form-control(type='text', name='geniusfrontal', ng-model='user.geniusfrontal',  ng-trim='false',id ='geniusfrontal')              
-                  div.col-sm-2			  
-                    input.form-control(type='text', name='geniusparietal', ng-model='user.geniusparietal',  ng-trim='false',id ='geniusparietal')              
-                  div.col-sm-2			  
-                    input.form-control(type='text', name='geniustemporal', ng-model='user.geniustemporal',  ng-trim='false',id ='geniustemporal')              
-                  div.col-sm-2			  
-                    input.form-control(type='text', name='geniusocipital', ng-model='user.geniusocipital',  ng-trim='false',id ='geniusocipital')
+                  div.col-xs-6			  
+                    .row			  
+                      label.col-xs-6 LOBES			  
+                      label.col-xs-6 PERCENT	  
+                    .row			  
+                      label.col-xs-6 PREFRONTAL				  
+                      div.col-xs-6			  
+                        input.form-control(type='text', name='geniusprefrontal', ng-model='user.geniusprefrontal',  ng-trim='false',id ='geniusprefrontal') 		  
+                    .row			  
+                      label.col-xs-6 FRONTAL			  
+                      div.col-xs-6		  
+                        input.form-control(type='text', name='geniusfrontal', ng-model='user.geniusfrontal',  ng-trim='false',id ='geniusfrontal')
+                    .row			  
+                      label.col-xs-6 PARIETAL			  
+                      div.col-xs-6	 		  
+                        input.form-control(type='text', name='geniusparietal', ng-model='user.geniusparietal',  ng-trim='false',id ='geniusparietal')
+                    .row			  
+                      label.col-xs-6 TEMPORAL			  
+                      div.col-xs-6		
+                        input.form-control(type='text', name='geniustemporal', ng-model='user.geniustemporal',  ng-trim='false',id ='geniustemporal')
+                    .row			  
+                      label.col-xs-6 OCIPITAL 			  
+                      div.col-xs-6
+                        input.form-control(type='text', name='geniusocipital', ng-model='user.geniusocipital',  ng-trim='false',id ='geniusocipital')
+                  div.col-xs-6			  
+                    .row			  
+                      label.col-xs-6 LEARNING STYLE			  
+                      label.col-xs-6 PERCENT		  
+                    .row			  
+                      label.col-xs-6 COGNITIVE				  
+                      div.col-xs-6			  
+                        input.form-control(type='text', name='geniuscognitivestyle', ng-model='user.geniuscognitivestyle',  ng-trim='false',id ='geniuscognitivestyle') 		  
+                    .row			  
+                      label.col-xs-6 AFFECTIVE			  
+                      div.col-xs-6			  
+                        input.form-control(type='text', name='geniusaffectivestyle', ng-model='user.geniusaffectivestyle',  ng-trim='false',id ='geniusaffectivestyle')
+                    .row			  
+                      label.col-xs-6 CRITICAL			  
+                      div.col-xs-6	 		  
+                        input.form-control(type='text', name='geniuscriticalstyle', ng-model='user.geniuscriticalstyle',  ng-trim='false',id ='geniuscriticalstyle')
+                    .row			  
+                      label.col-xs-6 REFLECTIVE			  
+                      div.col-xs-6		
+                        input.form-control(type='text', name='geniusreflectivestyle', ng-model='user.geniusreflectivestyle',  ng-trim='false',id ='geniusreflectivestyle')
+                    .row			  
+                      label.col-xs-6 INTEGRATED 			  
+                      div.col-xs-6		
+                        input.form-control(type='text', name='geniuseintegratedstyle', ng-model='user.geniuseintegratedstyle',  ng-trim='false', id = 'geniuseintegratedstyle')
                 div.form-group
                 .row
-                  label.col-sm-2 LEFT BRAIN %
-                  div.col-sm-2
+                  label.col-sm-4 LEFT BRAIN %
+                  div.col-sm-4
                     input.form-control(type='text', name='geniusleftpercentage', ng-model='user.geniusleftpercentage', ng-trim='false',id ='geniusleftpercentage')
                 .row
-                  label.col-sm-2 RIGHT BRAIN %
-                  div.col-sm-2
+                  label.col-sm-4 RIGHT BRAIN %
+                  div.col-sm-4
                     input.form-control(type='text', name='geniusrightpercentage', ng-model='user.geniusrightpercentage',  ng-trim='false',id ='geniusrightpercentage')
                 div.form-group
                 .row
-                  label.col-sm-2 MOTIVE
-                  label.col-sm-2 REFLECTIVE
-                  label.col-sm-2 COMPOSITE
-                  label.col-sm-2 TFRC
-                  label.col-sm-4 ELEMENT IN HOLLAND
+                  label.col-xs-2 MOTIVE
+                  label.col-xs-2 REFLECTIVE
+                  label.col-xs-2 COMPOSITE
+                  label.col-xs-2 TFRC
+                  label.col-xs-4 ELEMENT IN HOLLAND
                 .row              
-                  div.col-sm-2			  
+                  div.col-xs-2			  
                     input.form-control(type='text', name='geniusmotive', ng-model='user.geniusmotive',  ng-trim='false',id ='geniusmotive')                            
-                  div.col-sm-2			  
+                  div.col-xs-2			  
                     input.form-control(type='text', name='geniusreflective', ng-model='user.geniusreflective',  ng-trim='false',id ='geniusreflective')              
-                  div.col-sm-2			  
+                  div.col-xs-2			  
                     input.form-control(type='text', name='geniuscomposite', ng-model='user.geniuscomposite',  ng-trim='false',id ='geniuscomposite')              
-                  div.col-sm-2			  
+                  div.col-xs-2			  
                     input.form-control(type='text', name='geniustfrc', ng-model='user.geniustfrc',  ng-trim='false',id ='geniustfrc')              
-                  div.col-sm-4			  
+                  div.col-xs-4			  
                     input.form-control(type='text', name='geniuselementinholland', ng-model='user.geniuselementinholland',  ng-trim='false',id ='geniuselementinholland')
                 div.form-group
                 .row
-                  label.col-sm-2 COGNITIVE
-                  label.col-sm-2 AFFECTIVE
-                  label.col-sm-2 CRITICAL
-                  label.col-sm-2 REFLECTIVE
-                  label.col-sm-4 INTEGRATED
-                .row              
-                  div.col-sm-2			  
-                    input.form-control(type='text', name='geniuscognitivestyle', ng-model='user.geniuscognitivestyle',  ng-trim='false',id ='geniuscognitivestyle')                            
-                  div.col-sm-2			  
-                    input.form-control(type='text', name='geniusaffectivestyle', ng-model='user.geniusaffectivestyle',  ng-trim='false',id ='geniusaffectivestyle')              
-                  div.col-sm-2			  
-                    input.form-control(type='text', name='geniuscriticalstyle', ng-model='user.geniuscriticalstyle',  ng-trim='false',id ='geniuscriticalstyle')              
-                  div.col-sm-2			  
-                    input.form-control(type='text', name='geniusreflectivestyle', ng-model='user.geniusreflectivestyle',  ng-trim='false',id ='geniusreflectivestyle')              
-                  div.col-sm-4			  
-                    input.form-control(type='text', name='geniuseintegratedstyle', ng-model='user.geniuseintegratedstyle',  ng-trim='false',id ='geniuseintegratedstyle')
+                  label.h4.col-xs-12(style='text-align: center;',class="text-primary") SKILL             
                 div.form-group
                 .row
-                  label.h4.col-sm-12(style='text-align: center;',class="text-primary") SKILL             
-                div.form-group
-                .row
-                  label.col-sm-2 LEFT BRAIN
-                  label.col-sm-2 FINGER PATTERN
-                  label.col-sm-2 RANK
-                  label.col-sm-2 RIGHT BRAIN
-                  label.col-sm-2 FINGER PATTERN
-                  label.col-sm-2 RANK             
+                  label.col-xs-2 LEFT BRAIN
+                  label.col-xs-2 FINGER PATTERN
+                  label.col-xs-2 RANK
+                  label.col-xs-2 RIGHT BRAIN
+                  label.col-xs-2 FINGER PATTERN
+                  label.col-xs-2 RANK             
                 div.form-group
                 .row              
-                  label.col-sm-2 MANAGEMENT                        
-                  div.col-sm-2			  
+                  label.col-xs-2 MANAGEMENT                        
+                  div.col-xs-2			  
                     input.form-control(type='text', name='geniusmanagementpattern', ng-model='user.geniusmanagementpattern',  ng-trim='false',id ='geniusmanagementpattern')              
-                  div.col-sm-2			  
+                  div.col-xs-2			  
                     input.form-control(type='text', name='geniusmanagementrank', ng-model='user.geniusmanagementrank',  ng-trim='false',id ='geniusmanagementrank')              
-                  label.col-sm-2 LEADERSHIP          
-                  div.col-sm-2			  
+                  label.col-xs-2 LEADERSHIP          
+                  div.col-xs-2			  
                     input.form-control(type='text', name='geniusleadershippattern', ng-model='user.geniusleadershippattern',  ng-trim='false',id ='geniusleadershippattern')              
-                  div.col-sm-2			  
+                  div.col-xs-2			  
                     input.form-control(type='text', name='geniusleadershiprank', ng-model='user.geniusleadershiprank',  ng-trim='false',id ='geniusleadershiprank')
                 .row              
-                  label.col-sm-2 MATH/LOGIC                        
-                  div.col-sm-2			  
+                  label.col-xs-2 MATH/LOGIC                        
+                  div.col-xs-2			  
                     input.form-control(type='text', name='geniusmathlogicpattern', ng-model='user.geniusmathlogicpattern',  ng-trim='false',id ='geniusmathlogicpattern')              
-                  div.col-sm-2			  
+                  div.col-xs-2			  
                     input.form-control(type='text', name='geniusmathlogicrank', ng-model='user.geniusmathlogicrank',  ng-trim='false',id ='geniusmathlogicrank')              
-                  label.col-sm-2 IMAGINE          
-                  div.col-sm-2			  
+                  label.col-xs-2 IMAGINE          
+                  div.col-xs-2			  
                     input.form-control(type='text', name='geniusimaginepattern', ng-model='user.geniusimaginepattern',  ng-trim='false',id ='geniusimaginepattern')              
-                  div.col-sm-2			  
+                  div.col-xs-2			  
                     input.form-control(type='text', name='geniusimaginerank', ng-model='user.geniusimaginerank',  ng-trim='false',id ='geniusimaginerank')            
                 .row              
-                  label.col-sm-2 FINE MOTOR                        
-                  div.col-sm-2			  
+                  label.col-xs-2 FINE MOTOR                        
+                  div.col-xs-2			  
                     input.form-control(type='text', name='geniusfinemotorpattern', ng-model='user.geniusfinemotorpattern',  ng-trim='false',id ='geniusfinemotorpattern')              
-                  div.col-sm-2			  
+                  div.col-xs-2			  
                     input.form-control(type='text', name='geniusfinemotorrank', ng-model='user.geniusfinemotorrank',  ng-trim='false',id ='geniusfinemotorrank')              
-                  label.col-sm-2 GROSS MOTOR          
-                  div.col-sm-2			  
+                  label.col-xs-2 GROSS MOTOR          
+                  div.col-xs-2			  
                     input.form-control(type='text', name='geniusgrossmotorpattern', ng-model='user.geniusgrossmotorpattern',  ng-trim='false',id ='geniusgrossmotorpattern')              
-                  div.col-sm-2			  
+                  div.col-xs-2			  
                     input.form-control(type='text', name='geniusgrossmotorrank', ng-model='user.geniusgrossmotorrank',  ng-trim='false',id ='geniusgrossmotorrank')
                 .row              
-                  label.col-sm-2 LANGUAGE LISTEN                        
-                  div.col-sm-2			  
+                  label.col-xs-2 LANGUAGE LISTEN                        
+                  div.col-xs-2			  
                     input.form-control(type='text', name='geniuslanguagelistenpattern', ng-model='user.geniuslanguagelistenpattern',  ng-trim='false',id ='geniuslanguagelistenpattern')              
-                  div.col-sm-2			  
+                  div.col-xs-2			  
                     input.form-control(type='text', name='geniuslanguagelistenrank', ng-model='user.geniuslanguagelistenrank',  ng-trim='false',id ='geniuslanguagelistenrank')              
-                  label.col-sm-2 MUSIC          
-                  div.col-sm-2			  
+                  label.col-xs-2 MUSIC          
+                  div.col-xs-2			  
                     input.form-control(type='text', name='geniusmusicpattern', ng-model='user.geniusmusicpattern',  ng-trim='false',id ='geniusmusicpattern')              
-                  div.col-sm-2			  
+                  div.col-xs-2			  
                     input.form-control(type='text', name='geniusmusicrank', ng-model='user.geniusmusicrank',  ng-trim='false',id ='geniusmusicrank')
                 .row              
-                  label.col-sm-2 OBSERVATION                        
-                  div.col-sm-2			  
+                  label.col-xs-2 OBSERVATION                        
+                  div.col-xs-2			  
                     input.form-control(type='text', name='geniusobservationpattern', ng-model='user.geniusobservationpattern',  ng-trim='false',id ='geniusobservationpattern')              
-                  div.col-sm-2			  
+                  div.col-xs-2			  
                     input.form-control(type='text', name='geniusobservationrank', ng-model='user.geniusobservationrank',  ng-trim='false',id ='geniusobservationrank')              
-                  label.col-sm-2 VISUAL PERCEPTION          
-                  div.col-sm-2			  
+                  label.col-xs-2 VISUAL PERCEPTION          
+                  div.col-xs-2			  
                     input.form-control(type='text', name='geniusvisualpattern', ng-model='user.geniusvisualpattern',  ng-trim='false',id ='geniusvisualpattern')              
-                  div.col-sm-2			  
+                  div.col-xs-2			  
                     input.form-control(type='text', name='geniusvisualrank', ng-model='user.geniusvisualrank',  ng-trim='false',id ='geniusvisualrank')            
                 div.form-group
                 .row
@@ -272,79 +285,79 @@ block content
                     input.form-control(type='text', name='geniuslearningby', ng-model='user.geniuslearningby',  ng-trim='false',id ='geniuslearningby')                         
                 div.form-group
                 .row
-                  label.h4.col-sm-12(style='text-align: center;',class="text-primary") MULTIPLE INTEGLLIGENCE           
+                  label.h4.col-xs-12(style='text-align: center;',class="text-primary") MULTIPLE INTEGLLIGENCE           
                 div.form-group
                 .row               
-                  label.col-sm-1           
-                  label.col-sm-1 LANGUAGE              
-                  label.col-sm-1 MATH              
-                  label.col-sm-1 SPATIAL              
-                  label.col-sm-1 KINESTETIC             
-                  label.col-sm-1 MUSIC                  
-                  label.col-sm-2 INTRAPERSONAL                  
-                  label.col-sm-2 INTERPERSONAL               
-                  label.col-sm-1.5 NATURE 
+                  label.col-xs-1           
+                  label.col-xs-1 LANGUAGE              
+                  label.col-xs-1 MATH              
+                  label.col-xs-1 SPATIAL              
+                  label.col-xs-1 KINESTETIC             
+                  label.col-xs-1 MUSIC                  
+                  label.col-xs-2 INTRAPERSONAL                  
+                  label.col-xs-2 INTERPERSONAL               
+                  label.col-xs-1.5 NATURE 
                 .row                                      
-                  label.col-sm-1 RANK                                    
-                  div.col-sm-1			  
+                  label.col-xs-1 RANK                                    
+                  div.col-xs-1			  
                     input.form-control(type='text', name='geniusmilanguagerank', ng-model='user.geniusmilanguagerank',  ng-trim='false',id ='geniusmilanguagerank')                                     
-                  div.col-sm-1			  
+                  div.col-xs-1			  
                     input.form-control(type='text', name='geniusmimathrank', ng-model='user.geniusmimathrank',  ng-trim='false',id ='geniusmimathrank')                                     
-                  div.col-sm-1			  
+                  div.col-xs-1			  
                     input.form-control(type='text', name='geniusmispatialrank', ng-model='user.geniusmispatialrank',  ng-trim='false',id ='geniusmispatialrank')                                     
-                  div.col-sm-1			  
+                  div.col-xs-1			  
                     input.form-control(type='text', name='geniusmikinasteticrank', ng-model='user.geniusmikinasteticrank',  ng-trim='false',id ='geniusmikinasteticrank')                                     
-                  div.col-sm-1			  
+                  div.col-xs-1			  
                     input.form-control(type='text', name='geniusmimusicrank', ng-model='user.geniusmimusicrank',  ng-trim='false',id ='geniusmimusicrank')                                     
-                  div.col-sm-2			  
+                  div.col-xs-2			  
                     input.form-control(type='text', name='geniusmiintrarank', ng-model='user.geniusmiintrarank',  ng-trim='false',id ='geniusmiintrarank')                                     
-                  div.col-sm-2			  
+                  div.col-xs-2			  
                     input.form-control(type='text', name='geniusmiinterrank', ng-model='user.geniusmiinterrank',  ng-trim='false',id ='geniusmiinterrank')                                     
-                  div.col-sm-1			  
+                  div.col-xs-1			  
                     input.form-control(type='text', name='geniusminaturerank', ng-model='user.geniusminaturerank',  ng-trim='false',id ='geniusminaturerank') 
                 .row                                       
-                  label.col-sm-1 %                                    
-                  div.col-sm-1			  
+                  label.col-xs-1 %                                    
+                  div.col-xs-1			  
                     input.form-control(type='text', name='geniusmilanguageper', ng-model='user.geniusmilanguageper',  ng-trim='false',id ='geniusmilanguageper')                                     
-                  div.col-sm-1			  
+                  div.col-xs-1			  
                     input.form-control(type='text', name='geniusmimathper', ng-model='user.geniusmimathper',  ng-trim='false',id ='geniusmimathper')                                     
-                  div.col-sm-1			  
+                  div.col-xs-1			  
                     input.form-control(type='text', name='geniusmispatialper', ng-model='user.geniusmispatialper',  ng-trim='false',id ='geniusmispatialper')                                     
-                  div.col-sm-1			  
+                  div.col-xs-1			  
                     input.form-control(type='text', name='geniusmikinasteticper', ng-model='user.geniusmikinasteticper',  ng-trim='false',id ='geniusmikinasteticper')                                     
-                  div.col-sm-1			  
+                  div.col-xs-1			  
                     input.form-control(type='text', name='geniusmimusicper', ng-model='user.geniusmimusicper',  ng-trim='false',id ='geniusmimusicper')                                     
-                  div.col-sm-2			  
+                  div.col-xs-2			  
                     input.form-control(type='text', name='geniusmiintraper', ng-model='user.geniusmiintraper',  ng-trim='false',id ='geniusmiintraper')                                     
-                  div.col-sm-2			  
+                  div.col-xs-2			  
                     input.form-control(type='text', name='geniusmiinterper', ng-model='user.geniusmiinterper',  ng-trim='false',id ='geniusmiinterper')                                     
-                  div.col-sm-1			  
+                  div.col-xs-1			  
                     input.form-control(type='text', name='geniusminatureper', ng-model='user.geniusminatureper',  ng-trim='false',id ='geniusminatureper')
                 .row                                      
-                  label.col-sm-1 ATDLEFT                                    
-                  div.col-sm-1			  
+                  label.col-xs-1 ATDLEFT                                    
+                  div.col-xs-1			  
                     input.form-control(type='text', name='geniusatdleft', ng-model='user.geniusatdleft',  ng-trim='false',id ='geniusatdleft')                                     
-                  label.col-sm-1 REALISTIC                                             
-                  label.col-sm-2 INVESTIGATE                                           
-                  label.col-sm-1 ARTISTIC                                               
-                  label.col-sm-2 SOCIAL                                               
-                  label.col-sm-2 ENTERPRISE                                                
-                  label.col-sm-2 CONVENTIONAL
+                  label.col-xs-1 REALISTIC                                             
+                  label.col-xs-2 INVESTIGATE                                           
+                  label.col-xs-1 ARTISTIC                                               
+                  label.col-xs-2 SOCIAL                                               
+                  label.col-xs-2 ENTERPRISE                                                
+                  label.col-xs-2 CONVENTIONAL
                 .row                                      
-                  label.col-sm-1 ATDRIGHT                                    
-                  div.col-sm-1			  
+                  label.col-xs-1 ATDRIGHT                                    
+                  div.col-xs-1			  
                     input.form-control(type='text', name='geniusatdright', ng-model='user.geniusatdright',  ng-trim='false',id ='geniusatdright')                                    
-                  div.col-sm-1			  
+                  div.col-xs-1			  
                     input.form-control(type='text', name='geniusrealistic', ng-model='user.geniusrealistic',  ng-trim='false',id ='geniusrealistic')                                   
-                  div.col-sm-2			  
+                  div.col-xs-2			  
                     input.form-control(type='text', name='geniusinvestigate', ng-model='user.geniusinvestigate',  ng-trim='false',id ='geniusinvestigate')                                   
-                  div.col-sm-1			  
+                  div.col-xs-1			  
                     input.form-control(type='text', name='geniusartistic', ng-model='user.geniusartistic',  ng-trim='false',id ='geniusartistic')                                   
-                  div.col-sm-2			  
+                  div.col-xs-2			  
                     input.form-control(type='text', name='geniussocial', ng-model='user.geniussocial',  ng-trim='false',id ='geniussocial')                                   
-                  div.col-sm-2		  
+                  div.col-xs-2		  
                     input.form-control(type='text', name='geniusenterprise', ng-model='user.geniusenterprise',  ng-trim='false',id ='geniusenterprise')                                   
-                  div.col-sm-2		  
+                  div.col-xs-2		  
                     input.form-control(type='text', name='geniusconventional', ng-model='user.geniusconventional',  ng-trim='false',id ='geniusconventional') 
                 .row                                      
                   label.col-sm-3 CHARECTERSTIC INNER                                   
