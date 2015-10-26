@@ -4,10 +4,10 @@ app.controller('GetAllGeniuses', ["currentAuth","$scope", 'GeniusFactory', '$win
 		//Checks If current User is Authorized to view the page, and fetches the user list if yes.
 		if(currentAuth)
 		{
-			$scope.users = $firebaseArray(new Firebase(geniusesCollectionURL)); 
-		}
-		
-		// Code for creating a pagination in the window
+			//$scope.users = $firebaseArray(new Firebase(geniusesCollectionURL)); 
+			$scope.users = GeniusFactory.usersArray();
+			
+			// Code for creating a pagination in the window
 		$scope.itemsPerPage = 10;
 		$scope.currentPage = 0;
 	    
@@ -35,6 +35,9 @@ app.controller('GetAllGeniuses', ["currentAuth","$scope", 'GeniusFactory', '$win
 		  $scope.nextPageDisabled = function() { return $scope.currentPage === $scope.pageCount() ? "disabled" : ""; };	 
   
   
+		}
+		
+		
 		
 		// Initializes the scope variables			
 		$scope.selected="";
@@ -117,3 +120,10 @@ app.controller('GetAllGeniuses', ["currentAuth","$scope", 'GeniusFactory', '$win
 		
 	}]
 );
+
+app.controller('arrayController', function($timeout, GeniusFactory) {
+  // when this eventually fires and gets *remote* data again
+  // our other controller will automatically sync up
+  // without the need for the $watch function
+  $timeout(GeniusFactory.usersArray(), 2000);
+});
