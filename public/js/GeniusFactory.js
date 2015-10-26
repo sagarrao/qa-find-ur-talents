@@ -1,14 +1,13 @@
- app.factory('GeniusFactory', ["$firebaseObject", "$firebaseArray","$http", "$location","$window",
- function($firebaseObject,$firebaseArray,$http,$location,$window){
+ app.factory('GeniusFactory', ["$firebaseObject", "$firebaseArray","$http", "$location","$window","$q",
+ function($firebaseObject,$firebaseArray,$http,$location,$window,$q){
     //Initialize Variables
-    var _users;
-	var _usersArray;
 	var _user;
     var _userid;
+	var ref = new Firebase(geniusesCollectionURL);
+	var users = [];
 
 	
-    return {  users: users,
-			  usersArray: usersArray,
+    return {  
 			  setUser : function setUser(id){ //Sets current user and user id for future use
 				         
 						_user = $firebaseObject(new Firebase(geniusesCollectionURL+"/"+id));
@@ -33,8 +32,8 @@
 													});
 						},	    
 			 addUser: function addUser(user){
-						_users = $firebaseArray(new Firebase(geniusesCollectionURL));
-						_users.$add(user).then( function(ref){  //If User was added successfully then redirects to the home page
+						// _users = $firebaseArray(new Firebase(geniusesCollectionURL));
+						users.$add(user).then( function(ref){  //If User was added successfully then redirects to the home page
 												_user = null;
 												document.forms['geniusInfoForm'].reset();
 												window.location.assign("/addSuccess");
@@ -43,19 +42,18 @@
 															_user =null;
 															window.location.assign("/addFailed");
 														});
+						},
+			usersArray: function usersArray(){
+			                if(users.length == 0)
+							{
+								users = $firebaseArray(ref);
+								
+						    }
+								return users;
 						}
-			}  
+						
+	    }
+  } 	
+
 	
-	function usersArray(){
-		if(!_usersArray)
-		return _usersArray;
-	}
-	
-    function users() {
-		  if (!_users) {
-			_users = $firebaseObject(new Firebase(geniusesCollectionURL));
-		  }
-      return _users;
-    }
-	
-  }]); 
+  ]); 
